@@ -1,0 +1,71 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+<asp:ContentPlaceHolder ID="HeadContent" runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body>
+<div class="main">
+<div class="container">
+<form runat="server">
+<div class="page">
+<div class="header">
+<div class="title">
+<h1>
+WELCOME ANTARCTICA ANIMALS
+</h1>
+</div>
+<div class="menu-bg">
+<div class="row">
+<div class="col-md-8">
+<div class="clear hideSkiplink">
+<input type="checkbox" id="toggle-nav">
+<label for="toggle-nav">Menu</label>
+<div class="menu">
+<ul>
+<li><a href="Default.aspx" class="active1"> Home</a></li>
+<li><a href="About.aspx" class="active2"> About Us</a></li>
+<li><a href="gallery.aspx" class="active3"> Gallery</a></li>
+<li><a href="page-1.aspx" class="active4"> Page-1</a></li>
+<li><a href="page-2.aspx" class="active5"> Page-2</a></li>
+<li><a href="page-3.aspx" class="active6"> Page-3</a></li>
+<li><a href="page-4.aspx" class="active7"> Page-4</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="loginDisplay">
+<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+<AnonymousTemplate>
+<a href="Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a>
+</AnonymousTemplate>
+<LoggedInTemplate>
+Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+<asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+</LoggedInTemplate>
+</asp:LoginView>
+</div>
+</div>
+</div>
+</div>
+</div>
+<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+<div class="clear">
+</div>
+</div>
+<div class="footer">
+<p><strong>Name :</strong> Tomer Kalderon</p>
+<p><strong>Email :</strong> tomerkalderon123@gmail.com</p>
+<p class="copy">All Rights Reserved Copyright "Tomer Kalderon"</p>
+</div>
+</form>
+</body>
+</html>
